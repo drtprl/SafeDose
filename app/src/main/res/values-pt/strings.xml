@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SafeDose</string>
+    <string name="email_placeholder">Introduzir email</string>
+    <string name="password_placeholder">Introduzir password</string>
+    <string name="signup_textbutton">Não tem uma conta? Inscreva-se</string>
+    <string name="signup_button">Registo</string>
+    <string name="login_textbutton">Já tem uma conta? Login</string>
+    <string name="empty_fields">O email e password não podem estar vazios</string>
+    <string name="home_text">Ecrã Inicial</string>
+    <string name="app_description">Bem-vindo à SafeDose, nesta aplicação pode registar o seu consumo, estar atento a medicamentos ou interações entre medicamentosas e procurar centros comunitários perto de si</string>
+    <string name="profile_text">Página de Perfil</string>
+    <string name="dose_text">Página Dose</string>
+    <string name="centers_text">Centros Comunitarios</string>
+    <string name="name_label">Nome</string>
+    <string name="logout_toast">Log out com sucesso</string>
+    <string name="medication_name_label">Nome da medicação</string>
+    <string name="medication_dose_label">Dose(mg)</string>
+    <string name="add_daily_medication_button">Adicionar medicação habitual</string>
+    <string name="servicetype_button_description">Tipo de centros comunitario</string>
+    <string name="servicetype_selection">Selecionar tipo de centro comunitario</string>
+    <string name="register_dose_button">Registar toma</string>
+    <string name="dose_register">Criar registo de toma</string>
+    <string name="register_dose_title">Registro de dose</string>
+    <string name="dose_placeholder">Exemplo: ketamina, lorazepam</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="interaction_details">Detalhas das interações</string>
+    <string name="drugs">Medicamentos:</string>
+    <string name="interaction">Interações:</string>
+    <string name="interaction_explanation">Explicação:</string>
+    <string name="drug_testing_center">Drug Testing</string>
+    <string name="conssuming_center">Consumo assistido</string>
+    <string name="ist_center">Rastreio de IST</string>
+    <string name="no_center">Não selecionar</string>
+    <string name="schedule">Horarios:</string>
+    <string name="services">Serviços</string>
+</resources>

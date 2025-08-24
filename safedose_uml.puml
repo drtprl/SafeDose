@@ -1,0 +1,149 @@
+@startuml
+class dam.a47736.safedose.ui.bottomnavbarpages.SafeDoseUIState {
+}
+class dam.a47736.safedose.AppUtil {
++ void showToast(Context,String)
+}
+
+class dam.a47736.safedose.data.operations.StorageOperations {
+}
+class dam.a47736.safedose.MainActivity {
++ void onCreate(Bundle?)
+}
+
+class dam.a47736.safedose.ui.bottomnavbarpages.ProfileUiState {
+}
+class dam.a47736.safedose.data.LocationsRepo {
++ List<CommunityCenter> obtainLocations()
+}
+
+class dam.a47736.safedose.data.Dose {
+}
+class dam.a47736.safedose.data.Interaction {
+}
+enum dam.a47736.safedose.data.Risk {
+}
+class dam.a47736.safedose.data.operations.FirestoreOperations {
+}
+class dam.a47736.safedose.viewmodel.SafeDoseViewModel {
+-  _uiState
++ StateFlow<SafeDoseUIState> uiState
++ void updateEmail(String)
++ void updatePassword(String)
+}
+
+
+class dam.a47736.safedose.ui.bottomnavbarpages.MapUiState {
+}
+class dam.a47736.safedose.viewmodel.ProfileViewModel {
+-  _uiState
++ StateFlow<ProfileUiState> uiState
+-  authViewModel
+-  firestoreOperations
+-  gemini
++ void loadUserData(String)
++ void addDailyMedication(Medication)
++ void addDose(Dose)
+}
+
+
+class dam.a47736.safedose.viewmodel.MapViewModel {
+-  _uiState
++ StateFlow<MapUiState> uiState
+-  _allCenters
++ LiveData<List<CommunityCenter>> allCenters
++ void getDeviceLocation(FusedLocationProviderClient)
++ void getCommunityCenters()
++ void sortCommunityCentersByLocation()
++ void setServiceType(ServiceType)
++ void selectCenter(CommunityCenter)
+- void applyFilter(ServiceType)
++ Float calculateDistance(LatLng?,Double,Double)
++ void toogleFavorite(CommunityCenter)
+}
+
+
+class dam.a47736.safedose.data.FirestoreRepo {
++  firestore
++  firestoreOperations
++  geminiOperations
+}
+
+class dam.a47736.safedose.data.UserData {
+}
+class dam.a47736.safedose.data.Medication {
+}
+class dam.a47736.safedose.viewmodel.AuthViewModel {
+-  auth
+-  firestoreOperations
+-  _authState
++ LiveData<AuthState> authState
++ void checkAuthStatus()
++ void login(String,String)
++ void signup(String,String,String,(Boolean, String?)-> Unit)
++ String? getUserId()
++ void signout()
+}
+
+
+class dam.a47736.safedose.viewmodel.AuthState$Authenticated {
+}
+class dam.a47736.safedose.viewmodel.AuthState$Unauthenticated {
+}
+class dam.a47736.safedose.viewmodel.AuthState$Loading {
+}
+class dam.a47736.safedose.viewmodel.AuthState$Error {
+}
+class dam.a47736.safedose.viewmodel.AuthState {
+}
+class dam.a47736.safedose.data.operations.GeminiOperations {
+-  apiKey
+-  model
+-  endpoint
+-  client
+-  gson
+-  system
++ List<Interaction> makeQuery(Dose,List<Medication>)
+- String buildJsonBody(String)
+}
+
+
+class dam.a47736.safedose.data.CommunityCenter {
+}
+enum dam.a47736.safedose.data.ServiceType {
+}
+class dam.a47736.safedose.ui.bottomnavbarpages.NavItem {
+}
+
+
+androidx.activity.ComponentActivity <|-- dam.a47736.safedose.MainActivity
+androidx.lifecycle.ViewModel <|-- dam.a47736.safedose.viewmodel.SafeDoseViewModel
+androidx.lifecycle.ViewModel <|-- dam.a47736.safedose.viewmodel.ProfileViewModel
+androidx.lifecycle.ViewModel <|-- dam.a47736.safedose.viewmodel.MapViewModel
+androidx.lifecycle.ViewModel <|-- dam.a47736.safedose.viewmodel.AuthViewModel
+dam.a47736.safedose.viewmodel.AuthState +.. dam.a47736.safedose.viewmodel.AuthState$Authenticated
+dam.a47736.safedose.viewmodel.AuthState <|-- dam.a47736.safedose.viewmodel.AuthState$Authenticated
+dam.a47736.safedose.viewmodel.AuthState +.. dam.a47736.safedose.viewmodel.AuthState$Unauthenticated
+dam.a47736.safedose.viewmodel.AuthState <|-- dam.a47736.safedose.viewmodel.AuthState$Unauthenticated
+dam.a47736.safedose.viewmodel.AuthState +.. dam.a47736.safedose.viewmodel.AuthState$Loading
+dam.a47736.safedose.viewmodel.AuthState <|-- dam.a47736.safedose.viewmodel.AuthState$Loading
+dam.a47736.safedose.viewmodel.AuthState +.. dam.a47736.safedose.viewmodel.AuthState$Error
+dam.a47736.safedose.viewmodel.AuthState <|-- dam.a47736.safedose.viewmodel.AuthState$Error
+dam.a47736.safedose.viewmodel.ProfileViewModel --> dam.a47736.safedose.viewmodel.AuthViewModel
+dam.a47736.safedose.viewmodel.ProfileViewModel --> dam.a47736.safedose.data.operations.FirestoreOperations
+dam.a47736.safedose.viewmodel.ProfileViewModel --> dam.a47736.safedose.data.operations.GeminiOperations
+
+dam.a47736.safedose.viewmodel.MapViewModel --> dam.a47736.safedose.data.LocationsRepo
+dam.a47736.safedose.viewmodel.MapViewModel --> dam.a47736.safedose.data.CommunityCenter
+dam.a47736.safedose.viewmodel.MapViewModel --> dam.a47736.safedose.data.ServiceType
+
+dam.a47736.safedose.viewmodel.AuthViewModel --> dam.a47736.safedose.data.operations.FirestoreOperations
+
+dam.a47736.safedose.data.FirestoreRepo --> dam.a47736.safedose.data.operations.FirestoreOperations
+dam.a47736.safedose.data.FirestoreRepo --> dam.a47736.safedose.data.operations.GeminiOperations
+
+dam.a47736.safedose.data.operations.GeminiOperations --> dam.a47736.safedose.data.Dose
+dam.a47736.safedose.data.operations.GeminiOperations --> dam.a47736.safedose.data.Medication
+dam.a47736.safedose.data.operations.GeminiOperations --> dam.a47736.safedose.data.Interaction
+
+@enduml

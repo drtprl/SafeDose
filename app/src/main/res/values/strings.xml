@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">SafeDose</string>
+
+    //Strings for Login and Signup Screens
+    <string name="login_button" translatable="false">Login</string>
+    <string name="email_placeholder">Enter your email</string>
+    <string name="email_label" translatable="false">E-mail</string>
+    <string name="password_label" translatable="false">Password</string>
+    <string name="password_placeholder">Enter your password</string>
+    <string name="signup_textbutton">Don\'t have an account? Sign up</string>
+    <string name="signup_button">Sign Up</string>
+    <string name="login_textbutton">Already have an account? Login</string>
+    <string name="empty_fields">Email or password can\'t be empty</string>
+
+    //Strings for Home Page
+    <string name="home_text">Home Page</string>
+    <string name="app_description">Welcome to SafeDose, in this app you are able to register\n    your consumming, check drugs or medication interactions and check community centers\n    near by</string>
+
+    //Strings for Profile Page
+    <string name="profile_text">Profile Page</string>
+
+    //Strings for Dose Page
+    <string name="dose_text">Dose Page</string>
+
+    //Strings for Centers Page
+    <string name="centers_text">Centers Page</string>
+    <string name="name_label">Name</string>
+    <string name="logout_button" translatable="false">Log Out</string>
+    <string name="logout_toast">Log out successful</string>
+    <string name="creator_name" translatable="false">Duarte Afonso A47736</string>
+    <string name="app_version_details" translatable="false">SafeDose 2025</string>
+    <string name="medication_name_label">Medication Name</string>
+    <string name="medication_dose_label">Dose (mg)</string>
+    <string name="add_daily_medication_button">Add Daily Medicine</string>
+    <string name="servicetype_button_description">Service Type</string>
+    <string name="servicetype_selection">Select service type</string>
+    <string name="register_dose_button">Register Dose</string>
+    <string name="dose_register">Create Dose Register</string>
+    <string name="register_dose_title">Dose Registration</string>
+    <string name="dose_placeholder">Example: Ketamine, Lorazepam</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="interaction_details">Interactions details</string>
+    <string name="drugs">Drugs:</string>
+    <string name="interaction">"Interaction: "</string>
+    <string name="interaction_explanation">"Explanation: "</string>
+    <string name="drug_testing_center">Drug Testing</string>
+    <string name="conssuming_center">Consumming Center</string>
+    <string name="ist_center">IST Testing Center</string>
+    <string name="no_center">No selection</string>
+    <string name="schedule">"Schedule: "</string>
+    <string name="services">"Services: "</string>
+
+</resources>
